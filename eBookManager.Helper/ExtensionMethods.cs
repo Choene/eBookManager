@@ -58,5 +58,22 @@ namespace eBookManager.Helper
             using (FileStream fs = File.Create(storagePath))
             await JsonSerializer.SerializeAsync(fs, value);
         }
+
+        //Read the data back again into a List<StorageSpace> object and return that to a calling code
+        public async static Task<List<StorageSpace>> ReadFromDataStore(this List<StorageSpace> value, string storagePath)
+        {
+            if (!File.Exists(storagePath))
+            {
+                var newFile = File.Create(storagePath);
+                newFile.Close();
+            }
+
+            using FileStream fs = File.OpenRead(storagePath);
+            if (fs.Length == 0) return new List<StorageSpace>();
+
+            var storageList = await JsonSerializer.DeserializeAsync<List<StorageSpace>>(fs);
+
+            return storageList;
+        }
     }
 }
