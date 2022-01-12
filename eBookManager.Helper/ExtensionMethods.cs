@@ -1,8 +1,11 @@
 ﻿using eBookManager.Engine;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace eBookManager.Helper
 {
@@ -47,6 +50,13 @@ namespace eBookManager.Helper
                 storageSpaceId = (from r in space select r.ID).Max() + 1;
             }
             return exists;
+        }
+
+        //Write data to a file after converting it to JSON
+        public async static Task WriteToDataStore(this List<StorageSpace> value, string storagePath, bool appendToExistingFile = false)
+        {
+            using (FileStream fs = File.Create(storagePath))
+            await JsonSerializer.SerializeAsync(fs, value);
         }
     }
 }
