@@ -29,5 +29,7 @@ namespace eBookManager.Helper
                 return defaultInteger;
             }
         }
+        //ToMegabytes method
+        public static double ToMegabytes(this long bytes) => (bytes > 0) ? (bytes / 1024f) / 1024f : bytes;
     }
 }
