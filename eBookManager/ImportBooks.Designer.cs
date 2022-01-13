@@ -29,7 +29,7 @@ namespace eBookManager
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSelectFolder = new System.Windows.Forms.Button();
+            this.btnSelectSourceFolder = new System.Windows.Forms.Button();
             this.tvFoundBooks = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -41,12 +41,12 @@ namespace eBookManager
             this.btnAddNewStorageSpace = new System.Windows.Forms.Button();
             this.dlVirtualStorageSpace = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtFileSize = new System.Windows.Forms.TextBox();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.txtExtension = new System.Windows.Forms.TextBox();
+            this.txtFileName = new System.Windows.Forms.TextBox();
+            this.dtCreated = new System.Windows.Forms.DateTimePicker();
+            this.dtLastAccessed = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,14 +76,15 @@ namespace eBookManager
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSelectFolder
+            // btnSelectSourceFolder
             // 
-            this.btnSelectFolder.Location = new System.Drawing.Point(12, 12);
-            this.btnSelectFolder.Name = "btnSelectFolder";
-            this.btnSelectFolder.Size = new System.Drawing.Size(124, 23);
-            this.btnSelectFolder.TabIndex = 0;
-            this.btnSelectFolder.Text = "Select Source Folder";
-            this.btnSelectFolder.UseVisualStyleBackColor = true;
+            this.btnSelectSourceFolder.Location = new System.Drawing.Point(12, 12);
+            this.btnSelectSourceFolder.Name = "btnSelectSourceFolder";
+            this.btnSelectSourceFolder.Size = new System.Drawing.Size(124, 23);
+            this.btnSelectSourceFolder.TabIndex = 0;
+            this.btnSelectSourceFolder.Text = "Select Source Folder";
+            this.btnSelectSourceFolder.UseVisualStyleBackColor = true;
+            this.btnSelectSourceFolder.Click += new System.EventHandler(this.btnSelectSourceFolder_Click);
             // 
             // tvFoundBooks
             // 
@@ -91,6 +92,7 @@ namespace eBookManager
             this.tvFoundBooks.Name = "tvFoundBooks";
             this.tvFoundBooks.Size = new System.Drawing.Size(467, 214);
             this.tvFoundBooks.TabIndex = 1;
+            this.tvFoundBooks.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvFoundBooks_AfterSelect);
             // 
             // groupBox1
             // 
@@ -179,12 +181,12 @@ namespace eBookManager
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.txtFileSize);
+            this.groupBox2.Controls.Add(this.txtFilePath);
+            this.groupBox2.Controls.Add(this.txtExtension);
+            this.groupBox2.Controls.Add(this.txtFileName);
+            this.groupBox2.Controls.Add(this.dtCreated);
+            this.groupBox2.Controls.Add(this.dtLastAccessed);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -198,47 +200,47 @@ namespace eBookManager
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "File Details";
             // 
-            // textBox5
+            // txtFileSize
             // 
-            this.textBox5.Location = new System.Drawing.Point(105, 165);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(206, 23);
-            this.textBox5.TabIndex = 10;
+            this.txtFileSize.Location = new System.Drawing.Point(105, 165);
+            this.txtFileSize.Name = "txtFileSize";
+            this.txtFileSize.Size = new System.Drawing.Size(206, 23);
+            this.txtFileSize.TabIndex = 10;
             // 
-            // textBox4
+            // txtFilePath
             // 
-            this.textBox4.Location = new System.Drawing.Point(105, 136);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 23);
-            this.textBox4.TabIndex = 9;
+            this.txtFilePath.Location = new System.Drawing.Point(105, 136);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(206, 23);
+            this.txtFilePath.TabIndex = 9;
             // 
-            // textBox3
+            // txtExtension
             // 
-            this.textBox3.Location = new System.Drawing.Point(105, 49);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 23);
-            this.textBox3.TabIndex = 8;
+            this.txtExtension.Location = new System.Drawing.Point(105, 49);
+            this.txtExtension.Name = "txtExtension";
+            this.txtExtension.Size = new System.Drawing.Size(206, 23);
+            this.txtExtension.TabIndex = 8;
             // 
-            // textBox2
+            // txtFileName
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 23);
-            this.textBox2.TabIndex = 7;
+            this.txtFileName.Location = new System.Drawing.Point(105, 20);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.Size = new System.Drawing.Size(206, 23);
+            this.txtFileName.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // dtCreated
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(105, 107);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(206, 23);
-            this.dateTimePicker2.TabIndex = 7;
+            this.dtCreated.Location = new System.Drawing.Point(105, 107);
+            this.dtCreated.Name = "dtCreated";
+            this.dtCreated.Size = new System.Drawing.Size(206, 23);
+            this.dtCreated.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // dtLastAccessed
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(105, 78);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(206, 23);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtLastAccessed.Location = new System.Drawing.Point(105, 78);
+            this.dtLastAccessed.Name = "dtLastAccessed";
+            this.dtLastAccessed.Size = new System.Drawing.Size(206, 23);
+            this.dtLastAccessed.TabIndex = 6;
             // 
             // label7
             // 
@@ -467,7 +469,7 @@ namespace eBookManager
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tvFoundBooks);
-            this.Controls.Add(this.btnSelectFolder);
+            this.Controls.Add(this.btnSelectSourceFolder);
             this.Name = "ImportBooks";
             this.Text = "Import eBooks";
             this.Load += new System.EventHandler(this.ImportBooks_Load);
@@ -483,7 +485,7 @@ namespace eBookManager
 
         #endregion
 
-        private System.Windows.Forms.Button btnSelectFolder;
+        private System.Windows.Forms.Button btnSelectSourceFolder;
         private System.Windows.Forms.TreeView tvFoundBooks;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
@@ -502,12 +504,12 @@ namespace eBookManager
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtFileSize;
+        private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.TextBox txtExtension;
+        private System.Windows.Forms.TextBox txtFileName;
+        private System.Windows.Forms.DateTimePicker dtCreated;
+        private System.Windows.Forms.DateTimePicker dtLastAccessed;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
