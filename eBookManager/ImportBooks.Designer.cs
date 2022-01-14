@@ -32,14 +32,14 @@ namespace eBookManager
             this.btnSelectSourceFolder = new System.Windows.Forms.Button();
             this.tvFoundBooks = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblEbookCount = new System.Windows.Forms.Label();
+            this.lblStorageSpaceDescription = new System.Windows.Forms.Label();
+            this.txtStorageSpaceDescription = new System.Windows.Forms.RichTextBox();
+            this.btnCancelNewStorageSpaceSave = new System.Windows.Forms.Button();
             this.btnSaveNewStorageSpace = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNewStorageSpaceName = new System.Windows.Forms.TextBox();
             this.btnAddNewStorageSpace = new System.Windows.Forms.Button();
-            this.dlVirtualStorageSpace = new System.Windows.Forms.ComboBox();
+            this.dlVirtualStorageSpaces = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtFileSize = new System.Windows.Forms.TextBox();
             this.txtFilePath = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@ namespace eBookManager
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.btnAddBookToStorageSpace = new System.Windows.Forms.Button();
+            this.btnAddeBookToStorageSpace = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -96,14 +96,14 @@ namespace eBookManager
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.lblEbookCount);
+            this.groupBox1.Controls.Add(this.lblStorageSpaceDescription);
+            this.groupBox1.Controls.Add(this.txtStorageSpaceDescription);
+            this.groupBox1.Controls.Add(this.btnCancelNewStorageSpaceSave);
             this.groupBox1.Controls.Add(this.btnSaveNewStorageSpace);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNewStorageSpaceName);
             this.groupBox1.Controls.Add(this.btnAddNewStorageSpace);
-            this.groupBox1.Controls.Add(this.dlVirtualStorageSpace);
+            this.groupBox1.Controls.Add(this.dlVirtualStorageSpaces);
             this.groupBox1.Location = new System.Drawing.Point(12, 271);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(467, 267);
@@ -111,40 +111,40 @@ namespace eBookManager
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Virtual Storage Space";
             // 
-            // label16
+            // lblEbookCount
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 243);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(80, 15);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "lblBookCount";
+            this.lblEbookCount.AutoSize = true;
+            this.lblEbookCount.Location = new System.Drawing.Point(6, 90);
+            this.lblEbookCount.Name = "lblEbookCount";
+            this.lblEbookCount.Size = new System.Drawing.Size(86, 15);
+            this.lblEbookCount.TabIndex = 7;
+            this.lblEbookCount.Text = "lblEBookCount";
             // 
-            // label1
+            // lblStorageSpaceDescription
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Storage Space Description:";
+            this.lblStorageSpaceDescription.AutoSize = true;
+            this.lblStorageSpaceDescription.Location = new System.Drawing.Point(6, 119);
+            this.lblStorageSpaceDescription.Name = "lblStorageSpaceDescription";
+            this.lblStorageSpaceDescription.Size = new System.Drawing.Size(147, 15);
+            this.lblStorageSpaceDescription.TabIndex = 6;
+            this.lblStorageSpaceDescription.Text = "Storage Space Description:";
             // 
-            // richTextBox1
+            // txtStorageSpaceDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 98);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(455, 131);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.txtStorageSpaceDescription.Location = new System.Drawing.Point(6, 141);
+            this.txtStorageSpaceDescription.Name = "txtStorageSpaceDescription";
+            this.txtStorageSpaceDescription.Size = new System.Drawing.Size(455, 117);
+            this.txtStorageSpaceDescription.TabIndex = 5;
+            this.txtStorageSpaceDescription.Text = "";
             // 
-            // button1
+            // btnCancelNewStorageSpaceSave
             // 
-            this.button1.Location = new System.Drawing.Point(353, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancelNewStorageSpaceSave.Location = new System.Drawing.Point(353, 51);
+            this.btnCancelNewStorageSpaceSave.Name = "btnCancelNewStorageSpaceSave";
+            this.btnCancelNewStorageSpaceSave.Size = new System.Drawing.Size(108, 23);
+            this.btnCancelNewStorageSpaceSave.TabIndex = 4;
+            this.btnCancelNewStorageSpaceSave.Text = "Cancel";
+            this.btnCancelNewStorageSpaceSave.UseVisualStyleBackColor = true;
             // 
             // btnSaveNewStorageSpace
             // 
@@ -154,13 +154,14 @@ namespace eBookManager
             this.btnSaveNewStorageSpace.TabIndex = 3;
             this.btnSaveNewStorageSpace.Text = "Save";
             this.btnSaveNewStorageSpace.UseVisualStyleBackColor = true;
+            this.btnSaveNewStorageSpace.Click += new System.EventHandler(this.btnSaveNewStorageSpace_Click);
             // 
-            // textBox1
+            // txtNewStorageSpaceName
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 23);
-            this.textBox1.TabIndex = 2;
+            this.txtNewStorageSpaceName.Location = new System.Drawing.Point(6, 51);
+            this.txtNewStorageSpaceName.Name = "txtNewStorageSpaceName";
+            this.txtNewStorageSpaceName.Size = new System.Drawing.Size(235, 23);
+            this.txtNewStorageSpaceName.TabIndex = 2;
             // 
             // btnAddNewStorageSpace
             // 
@@ -171,13 +172,14 @@ namespace eBookManager
             this.btnAddNewStorageSpace.Text = "Add Storage";
             this.btnAddNewStorageSpace.UseVisualStyleBackColor = true;
             // 
-            // dlVirtualStorageSpace
+            // dlVirtualStorageSpaces
             // 
-            this.dlVirtualStorageSpace.FormattingEnabled = true;
-            this.dlVirtualStorageSpace.Location = new System.Drawing.Point(6, 22);
-            this.dlVirtualStorageSpace.Name = "dlVirtualStorageSpace";
-            this.dlVirtualStorageSpace.Size = new System.Drawing.Size(235, 23);
-            this.dlVirtualStorageSpace.TabIndex = 0;
+            this.dlVirtualStorageSpaces.FormattingEnabled = true;
+            this.dlVirtualStorageSpaces.Location = new System.Drawing.Point(6, 22);
+            this.dlVirtualStorageSpaces.Name = "dlVirtualStorageSpaces";
+            this.dlVirtualStorageSpaces.Size = new System.Drawing.Size(235, 23);
+            this.dlVirtualStorageSpaces.TabIndex = 0;
+            this.dlVirtualStorageSpaces.SelectedIndexChanged += new System.EventHandler(this.dlVirtualStorageSpaces_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -306,7 +308,7 @@ namespace eBookManager
             this.groupBox3.Controls.Add(this.textBox6);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.dateTimePicker3);
-            this.groupBox3.Controls.Add(this.btnAddBookToStorageSpace);
+            this.groupBox3.Controls.Add(this.btnAddeBookToStorageSpace);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
@@ -379,14 +381,15 @@ namespace eBookManager
             this.dateTimePicker3.Size = new System.Drawing.Size(206, 23);
             this.dateTimePicker3.TabIndex = 8;
             // 
-            // btnAddBookToStorageSpace
+            // btnAddeBookToStorageSpace
             // 
-            this.btnAddBookToStorageSpace.Location = new System.Drawing.Point(105, 255);
-            this.btnAddBookToStorageSpace.Name = "btnAddBookToStorageSpace";
-            this.btnAddBookToStorageSpace.Size = new System.Drawing.Size(75, 23);
-            this.btnAddBookToStorageSpace.TabIndex = 8;
-            this.btnAddBookToStorageSpace.Text = "Add Book";
-            this.btnAddBookToStorageSpace.UseVisualStyleBackColor = true;
+            this.btnAddeBookToStorageSpace.Location = new System.Drawing.Point(105, 255);
+            this.btnAddeBookToStorageSpace.Name = "btnAddeBookToStorageSpace";
+            this.btnAddeBookToStorageSpace.Size = new System.Drawing.Size(75, 23);
+            this.btnAddeBookToStorageSpace.TabIndex = 8;
+            this.btnAddeBookToStorageSpace.Text = "Add Book";
+            this.btnAddeBookToStorageSpace.UseVisualStyleBackColor = true;
+            this.btnAddeBookToStorageSpace.Click += new System.EventHandler(this.btnAddeBookToStorageSpace_Click);
             // 
             // label15
             // 
@@ -488,13 +491,13 @@ namespace eBookManager
         private System.Windows.Forms.Button btnSelectSourceFolder;
         private System.Windows.Forms.TreeView tvFoundBooks;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblStorageSpaceDescription;
+        private System.Windows.Forms.RichTextBox txtStorageSpaceDescription;
+        private System.Windows.Forms.Button btnCancelNewStorageSpaceSave;
         private System.Windows.Forms.Button btnSaveNewStorageSpace;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNewStorageSpaceName;
         private System.Windows.Forms.Button btnAddNewStorageSpace;
-        private System.Windows.Forms.ComboBox dlVirtualStorageSpace;
+        private System.Windows.Forms.ComboBox dlVirtualStorageSpaces;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -503,7 +506,7 @@ namespace eBookManager
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblEbookCount;
         private System.Windows.Forms.TextBox txtFileSize;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.TextBox txtExtension;
@@ -518,7 +521,7 @@ namespace eBookManager
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Button btnAddBookToStorageSpace;
+        private System.Windows.Forms.Button btnAddeBookToStorageSpace;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
