@@ -54,14 +54,14 @@ namespace eBookManager
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.txtISBN = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtPublisher = new System.Windows.Forms.TextBox();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtDatePublished = new System.Windows.Forms.DateTimePicker();
             this.btnAddeBookToStorageSpace = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -145,6 +145,7 @@ namespace eBookManager
             this.btnCancelNewStorageSpaceSave.TabIndex = 4;
             this.btnCancelNewStorageSpaceSave.Text = "Cancel";
             this.btnCancelNewStorageSpaceSave.UseVisualStyleBackColor = true;
+            this.btnCancelNewStorageSpaceSave.Click += new System.EventHandler(this.btnCancelNewStorageSpaceSave_Click);
             // 
             // btnSaveNewStorageSpace
             // 
@@ -171,6 +172,7 @@ namespace eBookManager
             this.btnAddNewStorageSpace.TabIndex = 1;
             this.btnAddNewStorageSpace.Text = "Add Storage";
             this.btnAddNewStorageSpace.UseVisualStyleBackColor = true;
+            this.btnAddNewStorageSpace.Click += new System.EventHandler(this.btnAddNewStorageSpace_Click);
             // 
             // dlVirtualStorageSpaces
             // 
@@ -300,14 +302,14 @@ namespace eBookManager
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox11);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.txtCategory);
+            this.groupBox3.Controls.Add(this.txtISBN);
+            this.groupBox3.Controls.Add(this.txtPrice);
+            this.groupBox3.Controls.Add(this.txtPublisher);
+            this.groupBox3.Controls.Add(this.txtAuthor);
+            this.groupBox3.Controls.Add(this.txtTitle);
             this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.dateTimePicker3);
+            this.groupBox3.Controls.Add(this.dtDatePublished);
             this.groupBox3.Controls.Add(this.btnAddeBookToStorageSpace);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label14);
@@ -324,47 +326,47 @@ namespace eBookManager
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Book Details";
             // 
-            // textBox11
+            // txtCategory
             // 
-            this.textBox11.Location = new System.Drawing.Point(105, 197);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(206, 23);
-            this.textBox11.TabIndex = 16;
+            this.txtCategory.Location = new System.Drawing.Point(105, 197);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(206, 23);
+            this.txtCategory.TabIndex = 16;
             // 
-            // textBox10
+            // txtISBN
             // 
-            this.textBox10.Location = new System.Drawing.Point(105, 139);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(206, 23);
-            this.textBox10.TabIndex = 15;
+            this.txtISBN.Location = new System.Drawing.Point(105, 139);
+            this.txtISBN.Name = "txtISBN";
+            this.txtISBN.Size = new System.Drawing.Size(206, 23);
+            this.txtISBN.TabIndex = 15;
             // 
-            // textBox9
+            // txtPrice
             // 
-            this.textBox9.Location = new System.Drawing.Point(105, 110);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(206, 23);
-            this.textBox9.TabIndex = 14;
+            this.txtPrice.Location = new System.Drawing.Point(105, 110);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(206, 23);
+            this.txtPrice.TabIndex = 14;
             // 
-            // textBox8
+            // txtPublisher
             // 
-            this.textBox8.Location = new System.Drawing.Point(105, 81);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(206, 23);
-            this.textBox8.TabIndex = 13;
+            this.txtPublisher.Location = new System.Drawing.Point(105, 81);
+            this.txtPublisher.Name = "txtPublisher";
+            this.txtPublisher.Size = new System.Drawing.Size(206, 23);
+            this.txtPublisher.TabIndex = 13;
             // 
-            // textBox7
+            // txtAuthor
             // 
-            this.textBox7.Location = new System.Drawing.Point(105, 52);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(206, 23);
-            this.textBox7.TabIndex = 12;
+            this.txtAuthor.Location = new System.Drawing.Point(105, 52);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(206, 23);
+            this.txtAuthor.TabIndex = 12;
             // 
-            // textBox6
+            // txtTitle
             // 
-            this.textBox6.Location = new System.Drawing.Point(105, 23);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(206, 23);
-            this.textBox6.TabIndex = 11;
+            this.txtTitle.Location = new System.Drawing.Point(105, 23);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(206, 23);
+            this.txtTitle.TabIndex = 11;
             // 
             // comboBox1
             // 
@@ -374,12 +376,12 @@ namespace eBookManager
             this.comboBox1.Size = new System.Drawing.Size(206, 23);
             this.comboBox1.TabIndex = 7;
             // 
-            // dateTimePicker3
+            // dtDatePublished
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(105, 168);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(206, 23);
-            this.dateTimePicker3.TabIndex = 8;
+            this.dtDatePublished.Location = new System.Drawing.Point(105, 168);
+            this.dtDatePublished.Name = "dtDatePublished";
+            this.dtDatePublished.Size = new System.Drawing.Size(206, 23);
+            this.dtDatePublished.TabIndex = 8;
             // 
             // btnAddeBookToStorageSpace
             // 
@@ -513,14 +515,14 @@ namespace eBookManager
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.DateTimePicker dtCreated;
         private System.Windows.Forms.DateTimePicker dtLastAccessed;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCategory;
+        private System.Windows.Forms.TextBox txtISBN;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtPublisher;
+        private System.Windows.Forms.TextBox txtAuthor;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtDatePublished;
         private System.Windows.Forms.Button btnAddeBookToStorageSpace;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
