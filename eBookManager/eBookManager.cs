@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace eBookManager
 {
-    public partial class Form1 : Form
+    public partial class eBookManager : Form
     {
-        public Form1()
+        public eBookManager()
         {
             InitializeComponent();
         }
